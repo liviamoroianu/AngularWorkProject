@@ -1,5 +1,5 @@
-angular.module('Eggly', [])
-.controller('MainCtrl', function ($scope) {
+angular.module('Eggly', ['underscore'])
+.controller('MainCtrl', function ($scope, _) {
     $scope.hello = 'world';
     $scope.categories = [
         {"id": 0, "name": "Development"},
