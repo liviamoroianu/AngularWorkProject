@@ -1,0 +1,11 @@
+<div>
+    <label> Categories </label>
+    <ul class="nav nav-sidebar">
+        <a href="#" ng-click="setCurrentCategory(null)">Reset</a>
+        <li ng-repeat="category in categories">
+            <a href="#" ng-click="setCurrentCategory(category)">{{category.name}}</a>
+        </li>
+    </ul>
+    <label>{{currentCategory}}</label>
+</div>
+

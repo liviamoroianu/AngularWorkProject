@@ -26,6 +26,7 @@
     "angular": "^1.5.6"
   },
   "devDependencies": {
-    "angular-underscore-module": "^1.0.3"
+    "angular-underscore-module": "^1.0.3",
+    "angular-ui-router": "^0.3.1"
   }
 }

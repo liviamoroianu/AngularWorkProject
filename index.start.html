@@ -1,57 +1,20 @@
 <html ng-app="Eggly">
-<head>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-underscore-module/angular-underscore-module.js"></script>
-    <script src="app/eggly-app.start.js"></script>
-</head>
 <body ng-controller="MainCtrl">
-
 <div>
-    <label> Categories </label>
-    <ul class="nav nav-sidebar">
-        <a href="#" ng-click="setCurrentCategory(null)">Reset</a>
-        <li ng-repeat="category in categories">
-            <a href="#" ng-click="setCurrentCategory(category)">{{category.name}}</a>
-        </li>
-    </ul>
-    <label>{{currentCategory}}</label>
-
-    <label> Bookmarks </label>
-    <ul class="nav nav-sidebar">
-        <li ng-repeat="bookmark in bookmarks | filter: {category: currentCategory.name }">
-            <a href="#">{{bookmark.title}}</a>
-            <a href="#" ng-click="setEditedBookmark(bookmark);startEditing();">Edit</a>
-        </li>
-    </ul>
-
-    <button ng-click="enterCreatingMode()"> Start Creating</button>
-
-    <button ng-if="isCreating()" ng-click="resetCreatingMode()"> Stop Creating</button>
-
-    <form ng-if="isCreating()" role="form" ng-submit="createBookmark(newBookmark)">
-        <div>
-            <label for="newBookmarkTitle">Title</label>
-            <input type="text" id="newBookmarkUrl" ng-model="newBookmark.title">
-            <newline></newline>
-            <label for="newBookmarkTitle">Url</label>
-            <input type="text" id="newBookmarkUrl" ng-model="newBookmark.url">
-            <button type="submit">Create bookmark</button>
-        </div>
-    </form>
-
-    <form ng-if="editing" role="form" ng-submit="updateBookmark(editedBookmark)">
-        <div>
-            <label for="newBookmarkTitle">Title</label>
-            <input type="text" ng-model="editedBookmark.title">
-            <newline></newline>
-            <label for="newBookmarkTitle">Url</label>
-            <input type="text" ng-model="editedBookmark.url">
-            <button type="submit">Edit bookmark</button>
-        </div>
-    </form>
-
+    <div ui-view="categories"></div>
+    <div ui-view="bookmarks"></div>
 </div>
 
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+<script src="app/eggly-app.start.js"></script>
+<script src="app/categories/bookmarks/create/bookmark-create.js"></script>
+<script src="app/categories/bookmarks/edit/bookmark-edit.js"></script>
+<script src="app/categories/bookmarks/bookmarks.js"></script>
+<script src="app/categories/categories.js"></script>
+<script src="app/common/models/categories-model.js"></script>
+<script src="app/common/models/bookmarks-model.js"></script>
 </body>
 
 </html>
