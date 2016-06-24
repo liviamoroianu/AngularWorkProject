@@ -1,23 +1,24 @@
 angular.module('categories', [
     'eggly.models.categories'
 ])
-    .config(function ($stateProvider) {
+    .config(function($stateProvider){
         $stateProvider
             .state('eggly.categories', {
                 url: '/',
                 views: {
-                    'categories@':{
+                    'categories@': {
                         controller: 'CategoriesCtrl',
                         templateUrl: 'app/categories/categories.tmpl.html'
                     },
-                    'bookmarks@':{
+                    'bookmarks@': {
+                        controller: 'BookmarksCtrl',
                         templateUrl: 'app/categories/bookmarks/bookmarks.tmpl.html'
                     }
                 }
             })
+        ;
     })
-    .controller('CategoriesCtrl', function CategoriesCtrl($scope) {
+    .controller('CategoriesCtrl', function CategoriesCtrl(){
 
     })
-
 ;

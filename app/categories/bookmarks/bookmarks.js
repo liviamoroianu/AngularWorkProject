@@ -1,23 +1,24 @@
 angular.module('categories.bookmarks', [
-    'eggly.models.bookmarks',
-    'eggly.models.categories',
     'categories.bookmarks.create',
-    'categories.bookmarks.edit'
+    'categories.bookmarks.edit',
+    'eggly.models.categories',
+    'eggly.models.bookmarks'
 ])
-    .config(function ($stateProvider) {
+    .config(function($stateProvider){
         $stateProvider
             .state('eggly.categories.bookmarks', {
                 url: 'categories/:category',
                 views: {
                     'bookmarks@': {
-                        templateUrl: "app/categories/bookmarks/bookmarks.tmpl.html",
+                        templateUrl: 'app/categories/bookmarks/bookmarks.tmpl.html',
                         controller: 'BookmarksCtrl'
                     }
                 }
+            });
 
-            })
+
     })
-    .controller('BookmarksCtrl', function($scope, $stateParams) {
+    .controller('BookmarksCtrl', function ($scope, $stateParams) {
         $scope.currentCategoryName = $stateParams.category;
     })
 ;
