@@ -43,10 +43,7 @@ angular.module('Eggly', [
         function setCurrentCategory(category) {
             if (category != null) {
                 $scope.currentCategory = category;
-                $state.go('eggly.categories.bookmarks', {category: category.name});
-            }else {
-                $scope.currentCategory = $scope.categories[0];
-                $state.go('eggly.categories.bookmarks', {category: $scope.categories[0].name});
+                $state.go('eggly.categories.bookmarks', {category:  $scope.currentCategory.name});
             }
             resetCreateForm();
         }
