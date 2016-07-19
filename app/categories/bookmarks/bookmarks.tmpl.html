@@ -1,9 +1,9 @@
-<h1>{{currentCategoryName}}</h1>
+<h1>{{bookmarksListCtrl.currentCategoryName}}</h1>
 <div>
 
     <label> Bookmarks </label>
     <ul class="nav nav-sidebar">
-        <li ng-repeat="bookmark in bookmarks | filter: {category: currentCategory.name }">
+        <li ng-repeat="bookmark in bookmarksListCtrl.bookmarks | filter: {category: bookmarksListCtrl.currentCategoryName }">
             <a href="#">{{bookmark.title}}</a>
         </li>
     </ul>
